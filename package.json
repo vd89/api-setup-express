@@ -10,7 +10,8 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "prepare": "husky"
   },
   "dependencies": {
     "express": "^4.21.2"
