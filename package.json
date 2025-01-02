@@ -7,6 +7,9 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "nd:remove": "rm -rf node_modules package-lock.json yarn.lock",
     "dev": "ts-node-dev --respawn src/index.ts",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
