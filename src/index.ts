@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.disable('x-powered-by');
 
-app.get('/', (_req: Request, res: Response):void => {
+app.get('/', (_req: Request, res: Response): void => {
   const date: Date = new Date();
   const data: Data = {
     status: 'success',
@@ -41,6 +41,6 @@ app.get('/', (_req: Request, res: Response):void => {
 
 app.use(errorHandler);
 
-app.listen(port, ():void => {
+app.listen(port, (): void => {
   console.log(`Server is running at http://localhost:${port}`);
 });
