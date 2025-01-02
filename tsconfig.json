@@ -1,15 +1,40 @@
 {
   "compilerOptions": {
-    "target": "es2016", // Specify the target JavaScript version
-    "module": "commonjs", // Specify the module system
-    "rootDir": "./src", // Specify the root directory of input files
-    "outDir": "./dist", // Specify the output directory
-    "esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
-    "strict": true, // Enable all strict type-checking options
-    "skipLibCheck": true, // Skip type checking of all declaration files
-    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
-    "moduleResolution": "node" // Specify module resolution strategy
+    "target": "es2020", // Modern Node.js supports newer ES features
+    "module": "commonjs",
+    "lib": ["es2020", "esnext.asynciterable"], // Add modern JS libraries
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true, // Allow importing JSON files
+    "declaration": true, // Generate .d.ts files
+    "sourceMap": true, // Generate source maps for debugging
+    "removeComments": true, // Remove comments in output
+    "noImplicitAny": true, // Raise error on expressions with implied 'any' type
+    "strictNullChecks": true, // Enable strict null checks
+    "strictFunctionTypes": true, // Enable strict checking of function types
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noImplicitReturns": true, // Report error when not all code paths return
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "baseUrl": ".", // Base directory for module resolution
+    "paths": {
+      // Path aliases for imports
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"], // Specify the files to include
-  "exclude": ["node_modules", "dist", ".eslint.config.js"] // Specify the files to exclude
+  "include": [
+    "src/**/*",
+    "tests/**/*" // Include test files
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage", // Exclude test coverage
+    ".eslint.config.js"
+  ]
 }
