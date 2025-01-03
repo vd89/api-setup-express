@@ -8,7 +8,7 @@ import morgan from 'morgan';
 import { Data, ErrorResponse } from './index.types';
 
 import { logger } from './logger';
-import  { HttpLogger, pinoHttp } from 'pino-http';
+import { HttpLogger, pinoHttp } from 'pino-http';
 
 const app = express();
 const port = 3000;
@@ -36,7 +36,7 @@ app.use(
 const pinoMiddleware = pinoHttp({
   logger: logger,
   // Define custom options that match Pino's expected types
-  customLogLevel: function (_req:Request, res:Response) {
+  customLogLevel: function (_req: Request, res: Response) {
     if (res.statusCode >= 400 && res.statusCode < 500) {
       return 'warn';
     } else if (res.statusCode >= 500) {
@@ -45,26 +45,26 @@ const pinoMiddleware = pinoHttp({
     return 'info';
   },
   // Custom success message function
-  customSuccessMessage: function (req:Request, res:Response) {
+  customSuccessMessage: function (req: Request, res: Response) {
     return `${req.method} ${req.url} completed with status ${res.statusCode}`;
   },
   // Custom error message function with correct parameter order
-  customErrorMessage: function (req:Request, res:Response, error:Error) {
+  customErrorMessage: function (req: Request, res: Response, error: Error) {
     return `${req.method} ${req.url} failed with status ${res.statusCode}: ${error?.message || 'Unknown error'}`;
   },
   // Custom properties to add to logs
-  customProps: function (req:Request) {
+  customProps: function (req: Request) {
     return {
       correlationId: req.id,
-      userAgent: req.headers['user-agent']
+      userAgent: req.headers['user-agent'],
     };
   },
   transport: {
     target: 'pino-pretty',
     options: {
-      colorize: true
-    }
-  }
+      colorize: true,
+    },
+  },
 }) as unknown as HttpLogger;
 app.use(pinoMiddleware);
 // Body parser with size limit
@@ -111,7 +111,7 @@ app.get('/', (_req: Request, res: Response): void => {
     message: 'Hello, world!',
     date: date.toUTCString(),
   };
-  logger.debug({data},'Sending response');
+  logger.debug({ data }, 'Sending response');
   res.status(200).json({ data });
 });
 
