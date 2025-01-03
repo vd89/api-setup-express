@@ -46,6 +46,11 @@ This template provides a robust foundation for building APIs using Express.js an
 - `yarn lint:fix`: Automatically fixes ESLint issues
 - `yarn format`: Formats code using Prettier
 
+### Testing
+- `yarn test`: Runs all tests using Jest
+- `yarn test:watch`: Runs tests in watch mode
+- `yarn test:coverage`: Generates test coverage report
+
 ### Maintenance
 - `yarn clean`: Removes the dist directory
 - `yarn nd:remove`: Removes node_modules and lock files
@@ -71,6 +76,15 @@ Advanced ESLint setup with:
   - No unused variables (error)
   - Prettier formatting enforcement
   - TypeScript-specific rules
+
+### Jest Configuration (jest.config.js)
+The Jest configuration is set up for TypeScript and includes:
+- TypeScript support via ts-jest
+- Test files located in `__tests__` directory or with `.test.ts` extensions
+- Coverage report generation
+
+Example configuration:
+```
 
 ### Commit Standards (commitlint.config.js)
 Enforces conventional commit messages with the following types:
