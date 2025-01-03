@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Api server setup with express and typescript ",
   "main": "index.js",
-  "license": "yes",
+  "license": "MIT",
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
@@ -19,7 +19,17 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.0",
+    "pino": "^9.6.0",
+    "pino-http": "^10.3.0",
+    "pino-pretty": "^13.0.0",
+    "xss-clean": "^0.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -28,8 +38,11 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3.0.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/hpp": "^0.2.6",
     "@types/jest": "^29.5.14",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.10.3",
     "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
