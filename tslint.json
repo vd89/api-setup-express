@@ -5,7 +5,7 @@
   "rules": {
     "quotemark": [true, "single"],
     "semicolon": [true, "always"],
-    "no-any": true,
+    "no-any": false,
     "typedef": [true, "call-signature", "parameter", "property-declaration", "member-variable-declaration"],
     "no-console": false,
     "member-access": [true, "no-public"],

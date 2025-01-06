@@ -3,7 +3,7 @@
     "target": "es2020", // Modern Node.js supports newer ES features
     "module": "commonjs",
     "lib": ["es2020", "esnext.asynciterable"], // Add modern JS libraries
-    "rootDir": "./src",
+    "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
     "strict": true,
@@ -29,7 +29,7 @@
   },
   "include": [
     "src/**/*",
-    "tests/**/*" // Include test files
+    "__test__/**/*" // Include test files
   ],
   "exclude": [
     "node_modules",

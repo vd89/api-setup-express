@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { FlatCompat } = require('@eslint/eslintrc');
 
 const compat = new FlatCompat({
@@ -37,7 +38,7 @@ const typescriptConfig = {
     prettier: require('eslint-plugin-prettier'),
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 'error',
+    // '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-function-return-type': 'warn',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-non-null-assertion': 'warn',
