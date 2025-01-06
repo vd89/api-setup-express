@@ -21,10 +21,10 @@ export const routes: Route[] = [
     method: 'GET',
     handler: (_req: Request, res: Response): void => {
       res.status(200).json({
-        data:{
+        data: {
           status: 'healthy',
           timestamp: new Date().toISOString(),
-        }
+        },
       });
     },
   },
