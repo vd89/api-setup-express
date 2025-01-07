@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Route } from '../gateway/types';
+import logger from '../logger';
 
 export const routes: Route[] = [
   {
@@ -7,6 +8,7 @@ export const routes: Route[] = [
     method: 'GET',
     handler: (_req: Request, res: Response): void => {
       const date = new Date();
+      logger.info('Hello, world!', date.toUTCString());
       res.status(200).json({
         data: {
           status: 'success',

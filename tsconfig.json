@@ -24,7 +24,8 @@
     "baseUrl": ".", // Base directory for module resolution
     "paths": {
       // Path aliases for imports
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@/logger": ["src/logger"]
     }
   },
   "include": [
